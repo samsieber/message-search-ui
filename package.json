@@ -1,0 +1,66 @@
+{
+  "name": "vue-parcel-starter",
+  "version": "1.0.0",
+  "description": "a simple vue.js starter with parcel",
+  "main": "src/main.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "parcel ./src/index.html",
+    "format": "prettier --write \"src/**/*.{vue,js}\"",
+    "build": "parcel build ./src/index.html --public-url .",
+    "build:ci": "parcel build ./src/index.html --public-url . --log-level 2",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --coverage --watch"
+  },
+  "keywords": [
+    "vue.js",
+    "parcel",
+    "vue",
+    "parcel-bundler"
+  ],
+  "author": {
+    "name": "Eric McCormick",
+    "url": "https://edm00se.codes"
+  },
+  "repository": "edm00se/vue-parcel-starter",
+  "homepage": "https://github.com/edm00se/vue-parcel-starter",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-plugin-transform-vue-jsx": "^1.1.2",
+    "@vue/component-compiler-utils": "^3.2.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.2.2",
+    "babel-loader": "^8.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2",
+    "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^10.2.11",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.10",
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-jest": "^3.0.6",
+    "vue-server-renderer": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": ""
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,vue}": [
+      "prettier --write"
+    ]
+  }
+}
